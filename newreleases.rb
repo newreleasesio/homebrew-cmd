@@ -5,51 +5,51 @@
 class Newreleases < Formula
   desc "A command line client for managing NewReleases projects."
   homepage "https://github.com/newreleasesio/cli-go"
-  version "0.1.14"
+  version "0.1.15"
   license "BSD-3-Clause"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/newreleasesio/cli-go/releases/download/v0.1.14/newreleases-darwin-arm64"
-      sha256 "892275717151ffb6e6c98011752ffb5f4d23b8306ffed73e4cbe7a197d4145e1"
-
-      def install
-        bin.install "newreleases-darwin-arm64" => "newreleases"
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/newreleasesio/cli-go/releases/download/v0.1.14/newreleases-darwin-amd64"
-      sha256 "45eb7aa792c9bb8df22b4942d1f80764370d6193f9b91a1478ad941c3482da27"
+      url "https://github.com/newreleasesio/cli-go/releases/download/v0.1.15/newreleases-darwin-amd64"
+      sha256 "3d6041fdfaf96aef8e508d04f88572be36d34adb0e97d296263903fb2f98a423"
 
       def install
         bin.install "newreleases-darwin-amd64" => "newreleases"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/newreleasesio/cli-go/releases/download/v0.1.15/newreleases-darwin-arm64"
+      sha256 "49668f7c402264393528c5d86d27299c965f680d2bc5360914842ecd672e0d26"
+
+      def install
+        bin.install "newreleases-darwin-arm64" => "newreleases"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/newreleasesio/cli-go/releases/download/v0.1.14/newreleases-linux-amd64"
-      sha256 "5300cdd562cd97c40e0ce1d1b2476cd0a4c26066514cfc31c845b6b9672023ec"
+      url "https://github.com/newreleasesio/cli-go/releases/download/v0.1.15/newreleases-linux-amd64"
+      sha256 "64e33a34c985aca9c26836b7f826bbc669ef1e7d08b05e408ae7de2d91418831"
 
       def install
         bin.install "newreleases-linux-amd64" => "newreleases"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/newreleasesio/cli-go/releases/download/v0.1.14/newreleases-linux-arm64"
-      sha256 "72bc653f1ec48b2f083532725d46bacbb63052a41da0400c4226558eb20600ae"
-
-      def install
-        bin.install "newreleases-linux-arm64" => "newreleases"
-      end
-    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/newreleasesio/cli-go/releases/download/v0.1.14/newreleases-linux-armv6"
-      sha256 "8b6a86838261fd2fd3b61e1f735e927bbf9591b30302d1bac7e74365480e647e"
+      url "https://github.com/newreleasesio/cli-go/releases/download/v0.1.15/newreleases-linux-armv6"
+      sha256 "b751c1f92fd8f70a6809fcc05069f3f513c509bcd5248edf37627e4441346ce1"
 
       def install
         bin.install "newreleases-linux-armv6" => "newreleases"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/newreleasesio/cli-go/releases/download/v0.1.15/newreleases-linux-arm64"
+      sha256 "d818f5974812eed1a8e8ec4b1915de8154b1a1ca3be7490cb0f426a407b5623d"
+
+      def install
+        bin.install "newreleases-linux-arm64" => "newreleases"
       end
     end
   end
